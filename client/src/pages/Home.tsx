@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CreateSessionCard } from "@/components/CreateSessionCard";
 import { JoinSessionCard } from "@/components/JoinSessionCard";
+import { DevBranding } from "@/components/DevBranding";
 
 export default function Home() {
   return (
@@ -11,9 +12,9 @@ export default function Home() {
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 z-10">
         <div className="max-w-4xl w-full space-y-12">
-          
+
           <div className="text-center space-y-4">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -21,13 +22,13 @@ export default function Home() {
             >
               Pair Drop
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto"
             >
-              Securely share text and files between devices in real-time. 
+              Securely share text and files between devices in real-time.
               No login required. Just pair and drop.
             </motion.p>
           </div>
@@ -45,11 +46,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 text-center space-y-2 z-10 border-t border-border/10">
-        <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Pair Drop. Simple. Secure. Fast.</p>
-        <p className="text-xs text-muted-foreground/60">
-          Made with ❤️ by <a href="https://moedulhassan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors font-medium underline underline-offset-4">Moeed ul Hassan</a>
-        </p>
+      <footer className="border-t border-border/5">
+        <DevBranding />
       </footer>
     </div>
   );

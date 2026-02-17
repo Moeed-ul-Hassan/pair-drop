@@ -12,6 +12,7 @@ import { ShareZone } from "@/components/ShareZone";
 import { ItemsList } from "@/components/ItemsList";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { DevBranding } from "@/components/DevBranding";
 
 export default function Session() {
   const [, params] = useRoute("/session/:code");
@@ -146,8 +147,8 @@ export default function Session() {
       </main>
 
       {/* Footer branding */}
-      <footer className="py-4 text-center border-t border-border/5 text-[10px] text-muted-foreground/40">
-        Pair Drop by <a href="https://moedulhassan.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Moeed ul Hassan</a>
+      <footer className="border-t border-border/5">
+        <DevBranding />
       </footer>
     </div>
   );
