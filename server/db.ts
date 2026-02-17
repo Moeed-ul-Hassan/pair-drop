@@ -10,5 +10,11 @@ if (!process.env.DATABASE_URL) {
   );
 }
 
-export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+// Render's PostgreSQL requires SSL for connections.
+// We enable it in production and allow self-signed certificates which is standard for Render.
+export const pool = new Pool({ 
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false
+});
+
 export const db = drizzle(pool, { schema });
