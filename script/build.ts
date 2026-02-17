@@ -8,7 +8,6 @@ const allowlist = [
   "connect-pg-simple",
   "cors",
   "date-fns",
-  "drizzle-orm",
   "drizzle-zod",
   "express",
   "express-rate-limit",
@@ -20,7 +19,6 @@ const allowlist = [
   "nodemailer",
   "passport",
   "passport-local",
-  "pg",
   "uuid",
   "ws",
   "zod",
@@ -50,7 +48,7 @@ async function buildAll() {
     define: {
       "process.env.NODE_ENV": '"production"',
     },
-    minify: true,
+    minify: false,
     external: externals,
     logLevel: "info",
   });
